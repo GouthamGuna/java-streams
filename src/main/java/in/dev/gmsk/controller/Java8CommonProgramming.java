@@ -13,23 +13,32 @@ public class Java8CommonProgramming {
 
         // 1. Find the list of students whose rank is in between 50 and 100;
 
-        getStudent_50_To_100_RankList( getAllStudentList() );
+        //getStudent_50_To_100_RankList( getAllStudentList() );
 
         //2. Find the Students who stays in Karnataka and sort them by their names;
 
-        getKarnatakaStudentList( getAllStudentList() );
+        //getKarnatakaStudentList( getAllStudentList() );
 
         // 3. Find all departments names
 
-        FindAllDepartmentsNames( getAllStudentList() );
+        //FindAllDepartmentsNames( getAllStudentList() );
 
         //4.  Find all the contact numbers
 
-        findAllTheContactNumbers( getAllStudentList() );
+        //findAllTheContactNumbers( getAllStudentList() );
 
         //5.  Group The Student By Department Names
+        //6. Find the department who is having maximum number of students
 
-        studentByDepartmentNames( getAllStudentList() );
+        //studentByDepartmentNames( getAllStudentList() );
+
+        //7. Find the average age of male and female students
+
+        //findTheAverageAgeOfStudent( getAllStudentList() );
+
+        //8. Find the highest rank in each department
+
+        findTheHighestRankInDept( getAllStudentList() );
     }
 
     static List<Student> getAllStudentList() {
@@ -138,4 +147,37 @@ public class Java8CommonProgramming {
         out.println( "OptionalStringLongEntry = " + OptionalStringLongEntry );
     }
 
+    static void findTheAverageAgeOfStudent(List<Student> studentList) {
+
+        Map<String, Double> collect = studentList.stream().collect(
+                Collectors.groupingBy( Student::getGender,
+                        Collectors.averagingInt( Student::getAge ) )
+        );
+
+        out.println( "findTheAverageAgeOfStudent = " + collect );
+    }
+
+    static void findTheHighestRankInDept(List<Student> studentList) {
+
+        Map<String, Optional<Student>> studentNewMap = studentList.stream().collect(
+                Collectors.groupingBy( Student::getDept,
+                        Collectors.minBy( Comparator.comparing( Student::getRank ) ) )
+        );
+
+        out.println( "studentNewMap = " + studentNewMap );
+
+        //9 .Find the student who has second rank
+
+        List<Student> secondRankList = studentList.stream().sorted(
+                Comparator.comparing( Student::getRank )
+        ).toList();
+
+        out.println( "secondRankList = " + secondRankList );
+
+        Student student = studentList.stream().sorted(
+                Comparator.comparing( Student::getAge )
+        ).skip( 1 ).findFirst().orElseThrow( () -> new RuntimeException( "No value Present" ) );
+
+        out.println( "student = " + student );
+    }
 }
