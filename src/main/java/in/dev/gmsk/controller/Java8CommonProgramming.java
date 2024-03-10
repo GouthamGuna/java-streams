@@ -39,6 +39,8 @@ public class Java8CommonProgramming {
         //8. Find the highest rank in each department
 
         findTheHighestRankInDept( getAllStudentList() );
+
+        streamForLoop(getAllStudentList());
     }
 
     static List<Student> getAllStudentList() {
@@ -179,5 +181,12 @@ public class Java8CommonProgramming {
         ).skip( 1 ).findFirst().orElseThrow( () -> new RuntimeException( "No value Present" ) );
 
         out.println( "student = " + student );
+    }
+
+    static void streamForLoop(List<Student> studentList){
+
+        studentList.stream()
+                .filter( s -> Objects.equals( s.getGender(), "Male" ) )
+                .forEach( out::println );
     }
 }
