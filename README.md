@@ -3,7 +3,7 @@
  The Consumer, Supplier, and Predicate interfaces are functional interfaces introduced in Java 8 to support functional programming.
  They are part of the java.util.function package.
 
- 1. `Consumer interface`:
+ 1. `Consumer interface` :
  
  * Accepts a single input and returns no output.
  * Used when you need to consume objects.
@@ -19,7 +19,7 @@
       }
     }
 	
-2.`Supplier interface`:
+2. `Supplier interface` :
  
  * Represents a function that does not take any argument but produces a value of type T.
  
@@ -37,7 +37,7 @@
       }
     }
 	
-3.`Predicate interface`:
+3. `Predicate interface` :
  
  * Accepts an argument and returns a boolean. Used to apply filters on collections of objects.
  
@@ -55,7 +55,7 @@
       }
     } 
 	
-4.`Function interface`:
+4. `Function interface` :
  
  * Takes an input value and returns a value. Used in mapping operations.
  
