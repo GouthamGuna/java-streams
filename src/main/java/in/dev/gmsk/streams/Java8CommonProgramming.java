@@ -1,4 +1,4 @@
-package in.dev.gmsk.controller;
+package in.dev.gmsk.streams;
 
 import in.dev.gmsk.model.Student;
 
