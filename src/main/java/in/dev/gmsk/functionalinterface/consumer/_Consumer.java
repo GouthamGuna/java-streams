@@ -1,4 +1,4 @@
-package in.dev.gmsk.consumer;
+package in.dev.gmsk.functionalinterface.consumer;
 
 import in.dev.gmsk.model.Employee;
 

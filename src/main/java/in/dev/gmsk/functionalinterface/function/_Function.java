@@ -1,4 +1,4 @@
-package in.dev.gmsk.function;
+package in.dev.gmsk.functionalinterface.function;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

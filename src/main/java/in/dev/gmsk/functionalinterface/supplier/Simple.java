@@ -1,4 +1,4 @@
-package in.dev.gmsk.supplier;
+package in.dev.gmsk.functionalinterface.supplier;
 
 import in.dev.gmsk.model.Student;
 

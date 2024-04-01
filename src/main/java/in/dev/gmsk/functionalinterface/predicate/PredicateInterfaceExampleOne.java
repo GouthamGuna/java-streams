@@ -1,4 +1,4 @@
-package in.dev.gmsk.predicate;
+package in.dev.gmsk.functionalinterface.predicate;
 
 import java.util.function.Predicate;
 
