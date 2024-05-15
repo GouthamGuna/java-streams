@@ -1,5 +1,6 @@
 package in.dev.gmsk.functionalinterface.predicate;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 import static java.lang.System.*;
@@ -28,6 +29,31 @@ public class _Predicate {
                         isPhoneNumberValidPredicate.or(containsNumber3).test("07000000000")
         );
 
+        var numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        out.println("totalValues : " + totalValues(numbers, e -> true));
+        out.println("totalValues : " + totalValues(numbers, e -> e % 2 == 0));
+        stringTest(s -> s.equalsIgnoreCase("trialBalance"));
+    }
+
+    public static void stringTest(Predicate<String> args) {
+        if (args.test("trialBalance")) {
+            out.println("trialBalance");
+        } else {
+            out.println("P&L");
+        }
+    }
+
+    public static int totalValues(List<Integer> values, Predicate<Integer> selector) {
+        int total = 0;
+
+        for (var e : values) {
+            if (selector.test(e)) {
+                total += e;
+            }
+        }
+
+        return total;
     }
 
     static boolean isPhoneNumberValid(String phoneNumber) {
