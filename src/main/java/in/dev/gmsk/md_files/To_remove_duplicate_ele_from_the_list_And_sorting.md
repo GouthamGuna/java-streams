@@ -1,4 +1,4 @@
-To remove duplicate elements from the list without using the `distinct()` method, you can use the `collect()` method with a `Collectors.toMap()` collector. This will create a `Map` where the keys are the unique elements and the values are the last occurrences of the duplicates.
+# To remove duplicate elements from the list without using the `distinct()` method, you can use the `collect()` method with a `Collectors.toMap()` collector. This will create a `Map` where the keys are the unique elements and the values are the last occurrences of the duplicates.
 
 Here's the code:
 
